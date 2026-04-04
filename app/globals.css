@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Font utilities */
+.font-fredoka {
+  font-family: var(--font-fredoka), sans-serif;
+}
+
+.font-nunito {
+  font-family: var(--font-nunito), sans-serif;
+}
+
+/* Neo-brutalist card */
+.card-brutal {
+  border: 2.5px solid #1E1B2E;
+  box-shadow: 4px 4px 0px #1E1B2E;
+  border-radius: 12px;
+  background: #fff;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.card-brutal:hover {
+  box-shadow: 6px 6px 0px #1E1B2E;
+  transform: translate(-1px, -1px);
+}
+
+.card-brutal:active {
+  box-shadow: 2px 2px 0px #1E1B2E;
+  transform: translate(1px, 1px);
+}
+
+/* Brutalist button */
+.btn-brutal {
+  border: 2.5px solid #1E1B2E;
+  box-shadow: 3px 3px 0px #1E1B2E;
+  border-radius: 8px;
+  font-family: var(--font-fredoka), sans-serif;
+  font-weight: 500;
+  transition: box-shadow 0.12s, transform 0.12s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-brutal:hover {
+  box-shadow: 5px 5px 0px #1E1B2E;
+  transform: translate(-1px, -1px);
+}
+
+.btn-brutal:active {
+  box-shadow: 1px 1px 0px #1E1B2E;
+  transform: translate(1px, 1px);
+}
+
+.btn-brutal:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: 2px 2px 0px #1E1B2E;
+  transform: none;
+}
+
+/* Color palette */
+:root {
+  --yellow: #FFD93D;
+  --orange: #FF6B35;
+  --pink: #FF6B9D;
+  --purple: #A855F7;
+  --blue: #3B82F6;
+  --green: #22C55E;
+  --dark: #1E1B2E;
+  --bg: #FFF9F0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E1B2E30;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1E1B2E60;
+}
