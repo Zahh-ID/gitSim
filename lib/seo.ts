@@ -5,7 +5,7 @@ export const SITE = {
   url: "https://gitsim.syzzhd.web.id",
   title: "Git Simulator — Belajar Git Itu Seru!",
   description:
-    "Media pembelajaran interaktif Version Control Git untuk siswa SMA/SMK. Belajar git init, commit, branch, merge, push/pull dengan animasi SVG dan kuis bahasa Indonesia.",
+    "Media pembelajaran interaktif Git untuk siswa SMA/SMK. Belajar git init, commit, branch, merge, push/pull dengan animasi SVG dan kuis bahasa Indonesia.",
   ogImage: "/opengraph-image",
   locale: "id_ID",
   author: "Syahruzzahid",

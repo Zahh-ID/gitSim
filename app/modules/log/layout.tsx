@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Git Log & Diff",
   description:
-    "Baca riwayat commit dengan git log dan bandingkan perubahan antar versi dengan git diff. Pelajari git show dan cara membaca history proyek. Modul 09 Git Simulator.",
+    "Baca riwayat commit dengan git log dan bandingkan perubahan dengan git diff. Pelajari git show dan cara membaca history proyek. Modul 09 Git Simulator.",
   path: "/modules/log",
   module: "log",
 });
