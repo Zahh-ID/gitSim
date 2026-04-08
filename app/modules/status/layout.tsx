@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE } from "@/lib/seo";
+import { jsonLd, learningResourceSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = buildMetadata({
   title: "Status & File States",
@@ -10,5 +11,15 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(learningResourceSchema({
+        name: "Status & File States",
+        description: "Pahami siklus hidup file di Git: untracked, modified, staged, dan committed. Gunakan git status untuk melacak perubahan file.",
+        url: `${SITE.url}/modules/status`,
+        position: 6,
+      }))} />
+      {children}
+    </>
+  );
 }

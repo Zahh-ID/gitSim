@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE } from "@/lib/seo";
+import { jsonLd, learningResourceSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = buildMetadata({
   title: "Commit & Staging Area",
@@ -10,5 +11,15 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(learningResourceSchema({
+        name: "Commit & Staging Area",
+        description: "Pahami 3 area Git: working directory, staging area, dan repository. Pelajari cara git add, git commit, dan membuat snapshot perubahan.",
+        url: `${SITE.url}/modules/commit`,
+        position: 2,
+      }))} />
+      {children}
+    </>
+  );
 }

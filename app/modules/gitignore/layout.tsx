@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE } from "@/lib/seo";
+import { jsonLd, learningResourceSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = buildMetadata({
   title: "Gitignore",
@@ -10,5 +11,15 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(learningResourceSchema({
+        name: "Gitignore",
+        description: "Cara menggunakan .gitignore untuk mengabaikan file yang tidak perlu di-track Git seperti node_modules, .env, dan build output.",
+        url: `${SITE.url}/modules/gitignore`,
+        position: 7,
+      }))} />
+      {children}
+    </>
+  );
 }

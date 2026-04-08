@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, SITE } from "@/lib/seo";
+import { jsonLd, learningResourceSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = buildMetadata({
   title: "Branching Git",
@@ -10,5 +11,15 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(learningResourceSchema({
+        name: "Branching Git",
+        description: "Buat cabang baru dengan git branch, pindah branch dengan git checkout/switch, dan kembangkan fitur secara paralel.",
+        url: `${SITE.url}/modules/branch`,
+        position: 3,
+      }))} />
+      {children}
+    </>
+  );
 }

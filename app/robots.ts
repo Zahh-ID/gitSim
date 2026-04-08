@@ -15,10 +15,9 @@ export default function robots(): MetadataRoute.Robots {
           "/tasks/",
           "/modules/",
         ],
-        disallow: [],
+        disallow: "",
       },
     ],
     sitemap: `${SITE.url}/sitemap.xml`,
-    host: SITE.url,
   };
 }
