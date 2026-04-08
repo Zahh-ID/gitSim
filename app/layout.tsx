@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import "./globals.css";
+import { buildMetadata } from "@/lib/seo";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -14,10 +15,7 @@ const nunito = Nunito({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Git Simulator — Belajar Git Itu Seru!",
-  description: "Media pembelajaran interaktif konsep version control Git untuk siswa SMA/SMK",
-};
+export const metadata: Metadata = buildMetadata();
 
 export default function RootLayout({
   children,
