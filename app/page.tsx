@@ -313,7 +313,7 @@ export default function HomePage() {
           className="text-sm opacity-50 flex items-center justify-center gap-2"
           style={{ fontFamily: "var(--font-nunito)" }}
         >
-          <FaCodeBranch /> Git Simulator - Proyek PSBI, Pendidikan Teknik Informatika UM
+          <FaCodeBranch /> Git Simulator, Pendidikan Teknik Informatika UM
         </p>
       </footer>
     </div>

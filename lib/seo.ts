@@ -34,7 +34,6 @@ export const BASE_KEYWORDS = [
   "version control system",
   "VCS",
   "source control",
-  "PSBI",
   "Universitas Negeri Malang",
   "Pendidikan Teknik Informatika",
 ];
