@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { VscGitMerge } from "react-icons/vsc";
 import { HiSparkles } from "react-icons/hi";
+import { QRCodeSVG } from "qrcode.react";
 
 const MODULES = [
   { Icon: FaFolder, title: "Repositori", color: "#FFD93D" },
@@ -150,31 +151,48 @@ export default function PosterPage() {
           ))}
         </motion.div>
 
-        {/* CTA */}
+        {/* CTA + QR */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0 }}
-          className="flex flex-col items-center gap-3"
+          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
         >
-          <Link
-            href="/"
-            className="btn-brutal inline-flex items-center gap-2 px-10 py-4 text-white text-lg sm:text-xl"
-            style={{
-              background: "#FF6B35",
-              fontFamily: "var(--font-fredoka)",
-              fontWeight: 600,
-              textDecoration: "none",
-            }}
-          >
-            <FaRocket /> Mulai Belajar Sekarang!
-          </Link>
+          <div className="flex flex-col items-center gap-2">
+            <Link
+              href="/"
+              className="btn-brutal inline-flex items-center gap-2 px-10 py-4 text-white text-lg sm:text-xl"
+              style={{
+                background: "#FF6B35",
+                fontFamily: "var(--font-fredoka)",
+                fontWeight: 600,
+                textDecoration: "none",
+              }}
+            >
+              <FaRocket /> Mulai Belajar Sekarang!
+            </Link>
+            <div
+              className="text-sm font-bold"
+              style={{ fontFamily: "var(--font-fredoka)", color: "#1E1B2E", opacity: 0.4 }}
+            >
+              gitsim.syzzhd.web.id
+            </div>
+          </div>
 
-          <div
-            className="text-base sm:text-lg font-bold mt-1"
-            style={{ fontFamily: "var(--font-fredoka)", color: "#1E1B2E", opacity: 0.5 }}
-          >
-            gitsim.syzzhd.web.id
+          <div className="card-brutal p-3 flex flex-col items-center gap-1.5" style={{ background: "#fff" }}>
+            <QRCodeSVG
+              value="https://gitsim.syzzhd.web.id"
+              size={100}
+              bgColor="#ffffff"
+              fgColor="#1E1B2E"
+              level="M"
+            />
+            <div
+              className="text-[10px] font-bold opacity-40"
+              style={{ fontFamily: "var(--font-nunito)" }}
+            >
+              Scan untuk akses
+            </div>
           </div>
         </motion.div>
       </div>
